@@ -1,15 +1,17 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const navLinks = [
-  { href: '#imkoniyatlar', label: 'Imkoniyatlar' },
-  { href: '#tariflar', label: 'Tariflar' },
-  { href: '#faq', label: 'FAQ' },
+  { href: `${base}/#imkoniyatlar`, label: 'Imkoniyatlar' },
+  { href: `${base}/#tariflar`, label: 'Tariflar' },
+  { href: `${base}/#faq`, label: 'FAQ' },
 ];
 ---
 
 <header class="sticky top-0 z-50 border-b border-line/60 bg-surface/80 backdrop-blur-md">
   <div class="container-content flex h-16 items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <img src="/logo.png" width="32" height="32" alt="" class="h-8 w-8 rounded-lg" />
+    <a href={`${base}/`} class="flex items-center gap-2">
+      <img src={`${base}/logo.png`} width="32" height="32" alt="" class="h-8 w-8 rounded-lg" />
       <span class="text-lg font-bold text-ink">Kelajagim</span>
     </a>
 
@@ -29,7 +31,7 @@ const navLinks = [
     </nav>
 
     <a
-      href="#waitlist"
+      href={`${base}/#waitlist`}
       class="min-h-[44px] rounded-pill bg-primary px-5 py-2.5 text-sm font-bold text-white transition-opacity hover:opacity-90 flex items-center"
     >
       Ro'yxatga yozilish

@@ -1,5 +1,7 @@
 ---
 import WaitlistForm from './WaitlistForm.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="waitlist" class="py-16 sm:py-24">
@@ -32,7 +34,7 @@ import WaitlistForm from './WaitlistForm.astro';
         class="h-[520px] w-[240px] sm:h-[640px] sm:w-[300px] overflow-hidden rounded-[2.5rem] border-8 border-ink/10 bg-white shadow-card"
       >
         <img
-          src="/mockup-home.png"
+          src={`${base}/mockup-home.png`}
           width="780"
           height="1768"
           alt="Kelajagim ilovasining bosh sahifasi: darslar progressi va yangiliklar"
