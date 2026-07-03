@@ -1,0 +1,62 @@
+---
+const faqs = [
+  {
+    q: 'Ilova qachon chiqadi?',
+    a: 'Ilova hozirda faol ishlab chiqilmoqda. Kutish ro\'yxatiga yozilganlar birinchi bo\'lib xabardor qilinadi va maxsus chegirma oladi.',
+  },
+  {
+    q: "Qaysi sinf o'quvchilari uchun?",
+    a: "4, 5 va 6-sinf o'quvchilari uchun mo'ljallangan — aynan Prezident maktablariga hujjat topshirish yoshidagi bolalar.",
+  },
+  {
+    q: "Android va iPhone'da ishlaydimi?",
+    a: 'Ha, ilova Android va iOS uchun bir vaqtda chiqadi.',
+  },
+  {
+    q: "To'lov qanday amalga oshiriladi?",
+    a: "Payme va Click orqali, shuningdek aktivatsiya kodlari orqali to'lash mumkin bo'ladi.",
+  },
+  {
+    q: 'Bepul qismi bo\'ladimi?',
+    a: "Ha, demo darslar va baholash testi bepul bo'ladi. To'liq kurslar tariflar orqali ochiladi.",
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+---
+
+<section id="faq" class="py-16 sm:py-24">
+  <div class="container-content mx-auto max-w-2xl">
+    <h2 class="text-center" data-reveal>Ko'p so'raladigan savollar</h2>
+
+    <div class="mt-10 space-y-4">
+      {faqs.map((faq) => (
+        <details
+          data-faq-item
+          class="group rounded-card border border-line bg-white shadow-card"
+        >
+          <summary
+            class="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-semibold text-ink"
+          >
+            <span>{faq.q}</span>
+            <span class="faq-chevron shrink-0 text-primary" aria-hidden="true">▾</span>
+          </summary>
+          <div class="px-6 pb-5 text-inkSecondary">{faq.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</section>

@@ -1,0 +1,22 @@
+---
+const stats = ['37+ maktab', "O'tish ballari", 'Yillik kvotalar'];
+---
+
+<section class="py-16 sm:py-24">
+  <div class="container-content text-center">
+    <h2 data-reveal>Maktablar bazasi</h2>
+
+    <p class="mx-auto mt-6 max-w-2xl text-inkSecondary" data-reveal>
+      37+ Prezident va Ijod maktablari haqida to'liq ma'lumot: o'tish ballari, kvotalar,
+      yotoqxona mavjudligi va ariza topshirish muddatlari — hammasi bir joyda.
+    </p>
+
+    <div class="mx-auto mt-12 grid max-w-2xl gap-6 sm:grid-cols-3">
+      {stats.map((stat) => (
+        <div class="rounded-card border border-line bg-white p-6 shadow-card" data-reveal>
+          <span class="text-lg font-bold text-primary">{stat}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

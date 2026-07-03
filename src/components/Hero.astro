@@ -1,0 +1,44 @@
+---
+import WaitlistForm from './WaitlistForm.astro';
+---
+
+<section id="waitlist" class="py-16 sm:py-24">
+  <div class="container-content grid items-center gap-12 lg:grid-cols-2">
+    <div>
+      <span
+        class="inline-flex items-center rounded-pill bg-primaryLight px-4 py-1.5 text-sm font-semibold text-primaryDark"
+      >
+        Tez kunda — Android va iOS
+      </span>
+
+      <h1 class="mt-6">Farzandingizni Prezident maktabiga tayyorlang</h1>
+
+      <p class="mt-6 max-w-xl text-lg text-inkSecondary">
+        4–6-sinf o'quvchilari uchun Aniq va Tabiiy yo'nalishlarda tizimli tayyorgarlik. Real
+        imtihon formatidagi testlar, video darslar va shaxsiy o'quv dasturi — barchasi bitta
+        ilovada.
+      </p>
+
+      <div class="mt-8">
+        <WaitlistForm id="hero" />
+        <p class="mt-3 text-[13px] text-inkMuted">
+          🎁 Kutish ro'yxatidagilar ilova chiqqanida maxsus chegirma oladi
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-center lg:justify-end" data-reveal>
+      <div
+        class="h-[520px] w-[240px] sm:h-[640px] sm:w-[300px] overflow-hidden rounded-[2.5rem] border-8 border-ink/10 bg-white shadow-card"
+      >
+        <img
+          src="/mockup-home.png"
+          width="780"
+          height="1768"
+          alt="Kelajagim ilovasining bosh sahifasi: darslar progressi va yangiliklar"
+          class="h-full w-full object-cover object-top"
+        />
+      </div>
+    </div>
+  </div>
+</section>

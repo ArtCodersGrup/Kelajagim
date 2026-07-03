@@ -1,0 +1,45 @@
+---
+const bullets = [
+  "Rasmiy imtihon formatiga mos ikki blokli tuzilma",
+  "Umumiy taymer — vaqtni boshqarishni o'rgatadi",
+  "Har bir savol bo'yicha batafsil tahlil",
+  "Kuchli va kuchsiz mavzular xaritasi",
+];
+---
+
+<section class="bg-gradient-to-br from-primaryLight to-white py-16 sm:py-24">
+  <div class="container-content grid items-center gap-12 lg:grid-cols-2">
+    <div data-reveal>
+      <h2>Prezident mock imtihoni — xuddi asl imtihondek</h2>
+
+      <ul class="mt-8 space-y-4">
+        {bullets.map((bullet) => (
+          <li class="flex items-start gap-3">
+            <span
+              class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-white"
+              aria-hidden="true"
+            >
+              ✓
+            </span>
+            <span class="text-inkSecondary">{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="flex justify-center lg:justify-end" data-reveal>
+      <div
+        class="h-[520px] w-[240px] sm:h-[640px] sm:w-[300px] overflow-hidden rounded-[2.5rem] border-8 border-ink/10 bg-white shadow-card"
+      >
+        <img
+          src="/mockup-test.png"
+          width="806"
+          height="2370"
+          alt="Prezident mock imtihoni ekrani: savol, taymer va javob variantlari"
+          loading="lazy"
+          class="h-full w-full object-cover object-top"
+        />
+      </div>
+    </div>
+  </div>
+</section>

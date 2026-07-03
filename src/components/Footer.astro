@@ -1,0 +1,36 @@
+---
+const links = [
+  { href: '/privacy', label: 'Maxfiylik siyosati' },
+  { href: '/terms', label: 'Foydalanish shartlari' },
+  { href: '/offer', label: 'Ommaviy oferta' },
+];
+---
+
+<footer class="border-t border-line bg-white py-12">
+  <div class="container-content flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
+    <div class="flex items-center gap-2">
+      <img src="/logo.png" width="32" height="32" alt="" loading="lazy" class="h-8 w-8 rounded-lg" />
+      <span class="text-lg font-bold text-ink">Kelajagim</span>
+    </div>
+
+    <nav aria-label="Huquqiy havolalar">
+      <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        {links.map((link) => (
+          <li>
+            <a href={link.href} class="text-sm text-inkSecondary hover:text-primary">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="text-sm text-inkMuted">
+      <a href="https://t.me/TELEGRAM_LINK_PLACEHOLDER" class="hover:text-primary">Telegram</a>
+      <span class="mx-2">·</span>
+      <a href="mailto:info@kelajagim.uz" class="hover:text-primary">info@kelajagim.uz</a>
+    </div>
+  </div>
+
+  <p class="mt-8 text-center text-sm text-inkMuted">© 2026 Kelajagim</p>
+</footer>

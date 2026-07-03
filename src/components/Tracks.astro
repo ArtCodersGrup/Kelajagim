@@ -1,0 +1,38 @@
+---
+const tracks = [
+  {
+    name: "Aniq yo'nalish",
+    subject: 'Matematika + Ingliz tili',
+    text: "Mantiqiy fikrlash, masalalar yechish va ingliz tili grammatikasi bo'yicha bosqichma-bosqich darslar.",
+    borderColor: 'border-t-primary',
+  },
+  {
+    name: "Tabiiy yo'nalish",
+    subject: 'Tabiiy fanlar + Ingliz tili',
+    text: "Biologiya, kimyo va fizika asoslari hamda ingliz tili — qiziqarli va tushunarli formatda.",
+    borderColor: 'border-t-tabiiy',
+  },
+];
+---
+
+<section id="imkoniyatlar" class="py-16 sm:py-24">
+  <div class="container-content">
+    <h2 class="text-center" data-reveal>Ikki yo'nalish — bitta maqsad</h2>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+      {tracks.map((track) => (
+        <div
+          class:list={[
+            'rounded-card border-t-4 border border-line bg-white p-8 shadow-card',
+            track.borderColor,
+          ]}
+          data-reveal
+        >
+          <h3 class="text-xl font-bold text-ink">{track.name}</h3>
+          <p class="mt-1 font-semibold text-inkSecondary">{track.subject}</p>
+          <p class="mt-4 text-inkSecondary">{track.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

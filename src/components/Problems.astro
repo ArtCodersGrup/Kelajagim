@@ -1,0 +1,38 @@
+---
+const problems = [
+  {
+    icon: '💸',
+    title: 'Repetitor qimmat',
+    text: "Sifatli repetitorning oylik narxi millionlab so'm. Har bir oila buni ko'tara olmaydi.",
+  },
+  {
+    icon: '🧩',
+    title: 'Tizimli tayyorgarlik yo\'q',
+    text: 'Internetdagi tarqoq materiallar bilan qaysi mavzudan boshlashni bilish qiyin.',
+  },
+  {
+    icon: '❓',
+    title: "Imtihon formati noma'lum",
+    text: "Bola real imtihonda qanday savollar bo'lishini bilmay, hayajondan yutqazadi.",
+  },
+];
+---
+
+<section class="py-16 sm:py-24">
+  <div class="container-content">
+    <h2 class="text-center" data-reveal>Tanish muammolarmi?</h2>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-3">
+      {problems.map((problem) => (
+        <div
+          class="rounded-card border border-line bg-white p-6 shadow-card"
+          data-reveal
+        >
+          <span class="text-3xl" aria-hidden="true">{problem.icon}</span>
+          <h3 class="mt-4 text-lg font-bold text-ink">{problem.title}</h3>
+          <p class="mt-2 text-inkSecondary">{problem.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

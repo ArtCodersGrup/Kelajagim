@@ -1,0 +1,84 @@
+---
+const plans = [
+  {
+    name: 'Oddiy',
+    highlighted: false,
+    features: ['Asosiy video darslar', 'Mavzu testlari', 'Yangiliklar va maktablar bazasi'],
+  },
+  {
+    name: 'Plus',
+    highlighted: true,
+    badge: 'Ommabop',
+    features: [
+      'Asosiy video darslar',
+      'Mavzu testlari',
+      'Yangiliklar va maktablar bazasi',
+      "To'liq kurs materiallari",
+      'Batafsil natija tahlili',
+      'Statistika',
+    ],
+  },
+  {
+    name: 'Premium',
+    highlighted: false,
+    features: [
+      'Asosiy video darslar',
+      'Mavzu testlari',
+      'Yangiliklar va maktablar bazasi',
+      "To'liq kurs materiallari",
+      'Batafsil natija tahlili',
+      'Statistika',
+      'Prezident mock imtihonlari',
+      'Sertifikat',
+    ],
+  },
+];
+---
+
+<section id="tariflar" class="py-16 sm:py-24">
+  <div class="container-content">
+    <h2 class="text-center" data-reveal>Tariflar</h2>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-3">
+      {plans.map((plan) => (
+        <div
+          class:list={[
+            'relative flex flex-col rounded-card border bg-white p-8 shadow-card',
+            plan.highlighted ? 'border-2 border-primary' : 'border-line',
+          ]}
+          data-reveal
+        >
+          {plan.badge && (
+            <span
+              class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-pill bg-primary px-3 py-1 text-xs font-bold text-white"
+            >
+              {plan.badge}
+            </span>
+          )}
+
+          <h3 class="text-xl font-bold text-ink">{plan.name}</h3>
+
+          <ul class="mt-6 flex-1 space-y-3">
+            {plan.features.map((feature) => (
+              <li class="flex items-start gap-2 text-inkSecondary">
+                <span class="mt-0.5 text-primary" aria-hidden="true">✓</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <span
+            class="mt-8 inline-flex w-fit items-center rounded-pill bg-primaryLight px-4 py-1.5 text-sm font-semibold text-primaryDark"
+          >
+            Tez kunda
+          </span>
+        </div>
+      ))}
+    </div>
+
+    <p class="mx-auto mt-10 max-w-2xl text-center text-inkMuted" data-reveal>
+      Aniq narxlar ilova chiqishi bilan e'lon qilinadi. Kutish ro'yxatidagilar uchun maxsus
+      chegirma kafolatlanadi.
+    </p>
+  </div>
+</section>

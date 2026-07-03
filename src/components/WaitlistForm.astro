@@ -1,0 +1,55 @@
+---
+export interface Props {
+  id: string;
+  variant?: 'default' | 'light';
+}
+
+const { id, variant = 'default' } = Astro.props;
+const isLight = variant === 'light';
+---
+
+<div class="w-full max-w-md">
+  <form data-waitlist-form novalidate class="flex flex-col sm:flex-row gap-3">
+    <label for={`phone-${id}`} class="visually-hidden">Telefon raqam</label>
+    <div class="flex-1">
+      <input
+        type="tel"
+        id={`phone-${id}`}
+        name="phone"
+        inputmode="numeric"
+        autocomplete="tel"
+        placeholder="+998 __ ___ __ __"
+        data-phone-input
+        class:list={[
+          'w-full min-h-[44px] rounded-card border px-4 py-3 text-base outline-none transition-colors',
+          isLight
+            ? 'border-white/30 bg-white/10 text-white placeholder:text-white/60 focus:border-white'
+            : 'border-line bg-white text-ink placeholder:text-inkMuted focus:border-primary',
+        ]}
+      />
+      <p
+        data-error-msg
+        role="alert"
+        hidden
+        class:list={['mt-2 text-sm', isLight ? 'text-white' : 'text-danger']}
+      >
+      </p>
+    </div>
+    <button
+      type="submit"
+      data-submit-btn
+      class:list={[
+        'min-h-[44px] shrink-0 rounded-pill px-6 py-3 font-bold transition-opacity hover:opacity-90 disabled:opacity-60',
+        isLight ? 'bg-white text-primary' : 'bg-primary text-white',
+      ]}
+    >
+      Birinchilardan bo'ling
+    </button>
+  </form>
+  <p data-success-msg hidden class:list={['mt-3 text-base font-medium', isLight ? 'text-white' : 'text-ink']}></p>
+</div>
+
+<script>
+  import { initWaitlistForms } from '../scripts/waitlist';
+  initWaitlistForms();
+</script>
